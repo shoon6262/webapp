@@ -1,0 +1,8 @@
+<!doctype html>
+
+<h1> Articles </h1>
+<ul>
+{% for item in articles %}
+	<li></li><a href="article/{{item.id}}">{{item.title}}</a></li>
+{% endfor %}
+</ul>
