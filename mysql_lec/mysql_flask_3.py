@@ -26,7 +26,6 @@ def insert(id, name, phone):
 	try:
 		cur.execute(sql)
         	db.commit()
-
 	except:
 		db.rollback()
         cur.close()
@@ -46,6 +45,7 @@ def get_id(id):
 	
 	cur.close()
 	db.close()
+	
 	return render_template('select_id.html', data = rs)
 
 
@@ -58,8 +58,7 @@ def update(id, name2, phone2):
         try:
                 cur.execute(sql)
                 db.commit()
-
-        except:
+	except:
                 db.rollback()
         cur.close()
         db.close()
@@ -76,8 +75,7 @@ def delete(id):
         try:
                 cur.execute(sql)
                 db.commit()
-
-        except:
+	except:
                 db.rollback()
         cur.close()
         db.close()
